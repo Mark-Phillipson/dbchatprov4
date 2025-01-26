@@ -1,0 +1,7 @@
+git blame C:/Users/MPhil/source/repos/dbchatprov4/DBChatPro/appsettings.Development.json
+
+s
+
+git log C:/Users/MPhil/source/repos/dbchatprov4/DBChatPro/appsettings.Development.json
+
+git add C:/Users/MPhil/source/repos/dbchatprov4/DBChatPro/appsettings.Development.json
