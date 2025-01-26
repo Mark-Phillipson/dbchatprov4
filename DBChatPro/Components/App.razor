@@ -30,6 +30,20 @@
     <Routes @rendermode="InteractiveServer" />
     <script src="_framework/blazor.web.js"></script>
 	<script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <script>
+        function downloadFile(filename, content) {
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/csv;base64,' + content);
+            element.setAttribute('download', filename);
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+        }
+    </script>
 </body>
 
 </html>

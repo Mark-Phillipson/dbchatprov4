@@ -22,7 +22,8 @@ public partial class Home : ComponentBase
     [Inject] public required IConfiguration config { get; set; }
     [Inject] public required AIService aiService { get; set; }
     [Inject] public required IJSRuntime JSRuntime { get; set; }
-
+    // UI Components
+    private MudTabs? mudResultTabs = null;
     // Table styling
     private bool dense = false;
     private bool hover = true;
@@ -172,6 +173,11 @@ public partial class Home : ComponentBase
             History = await queryService.GetQueries(ActiveConnection.Name, QueryType.History);
             Favorites = await queryService.GetQueries(ActiveConnection.Name, QueryType.Favorite);
             Error = string.Empty;
+            if (mudResultTabs != null)
+            {
+                mudResultTabs.ActivatePanel(0);
+            }
+
         }
         catch (Exception e)
         {
